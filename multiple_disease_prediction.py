@@ -106,7 +106,7 @@ if (selected == 'Home page'):
         image = Image.open(image_path)
         st.image(image, width=700,use_column_width=True)
     
-    set_background_image("predictomed Home.jpg")
+    set_background_image("predictomed home.jpg")
 #The use_column_width=True argument makes the image span the entire width of the page
 # and the clamp=True argument makes sure that the aspect ratio of the image is maintained  
     
