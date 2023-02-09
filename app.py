@@ -2,7 +2,7 @@ import streamlit as st
 import webbrowser
 from PIL import Image
 
-icon = Image.open('E:\PILLAI COLLEGE\MLPROJECT\hospital.png') 
+icon = Image.open('C:\MLPROJECT\hospital.png') 
 
 st.set_page_config(
 	page_title = 'PredictoMed Login',
