@@ -25,7 +25,7 @@ from PIL import Image
 # loading the saved models
 #from PIL import Image
 
-icon = Image.open('E:\PILLAI COLLEGE\MLPROJECT\hospital.png') 
+icon = Image.open('hospital.png') 
 
 st.set_page_config(
 	page_title = 'PredictoMed',
@@ -44,11 +44,11 @@ st.set_page_config(
 
 
 
-diabetes_model = pickle.load(open('E:/PILLAI COLLEGE/MLPROJECT/diabetes_model.sav', 'rb'))
+diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
-heart_disease_model = pickle.load(open('E:/PILLAI COLLEGE/MLPROJECT/heart_disease_model.sav','rb'))
+heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
-parkinsons_model = pickle.load(open('E:/PILLAI COLLEGE/MLPROJECT/parkinsons_model.sav', 'rb'))
+parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
 
 
@@ -106,7 +106,7 @@ if (selected == 'Home page'):
         image = Image.open(image_path)
         st.image(image, width=700,use_column_width=True)
     
-    set_background_image("E:\PILLAI COLLEGE\MLPROJECT\predictomed Home.jpg")
+    set_background_image("predictomed Home.jpg")
 #The use_column_width=True argument makes the image span the entire width of the page
 # and the clamp=True argument makes sure that the aspect ratio of the image is maintained  
     
@@ -116,11 +116,11 @@ if (selected == 'Diabetes Prediction'):
     
    
 # Load the diabetes dataset
-    df = pd.read_csv("E:\PILLAI COLLEGE\MLPROJECT\datasets\diabetes.csv")
+    df = pd.read_csv("datasets\diabetes.csv")
 
 # Create a title and header
     st.header("Exploring Diabetes Dataset")
-    #img = Image.open("E:\PILLAI COLLEGE\MLPROJECT\diabetes.jpg")
+    #img = Image.open("diabetes.jpg")
     #st.image(img, width=400)
     st.write("Diabetes is a chronic condition in which the body is unable to produce or effectively use insulin, a hormone that regulates blood sugar levels. This leads to elevated levels of glucose in the blood, which can cause damage to various organs and tissues over time.")
     
@@ -185,12 +185,12 @@ if (selected == 'Heart Disease Prediction'):
     st.markdown("Heart disease refers to a range of conditions that affect the heart and blood vessels.")
     
         # Add images
-    #img = Image.open("E:\PILLAI COLLEGE\MLPROJECT\heart.png")
+    #img = Image.open("heart.png")
     #st.image(img, width=300)
     
     st.header('Exploring Heart Disease Dataset')
        # Load the heart disease data set
-    df = pd.read_csv("E:\PILLAI COLLEGE\MLPROJECT\datasets\heart.csv")
+    df = pd.read_csv("datasets\heart.csv")
 
        # Create a bar chart of the number of cases for each type of heart disease
     column = st.selectbox("Select a column", df.columns)
@@ -200,7 +200,7 @@ if (selected == 'Heart Disease Prediction'):
     st.write('Chest Pain Types- angina (0), atypical angina (1), non-anginal pain (2), or asymptomatic (3)')
     
    
-# heartimage = Image.open('E:\PILLAI COLLEGE\MLPROJECT\heart.png')
+# heartimage = Image.open('heart.png')
 
     #st.image(heartimage, caption='heart')
     st.title('Heart Disease Prediction')
@@ -274,7 +274,7 @@ if (selected == "Parkinsons Prediction"):
     # page title
    
     # Load the Parkinson's dataset
-    df = pd.read_csv("E:\PILLAI COLLEGE\MLPROJECT\datasets\parkinsons.csv")
+    df = pd.read_csv("datasets\parkinsons.csv")
 
 # Create a title and header
     st.title("Parkinson's Analysis")
