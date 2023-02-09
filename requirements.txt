@@ -1,0 +1,6 @@
+matplotlib==3.3.0
+pandas==1.5.3
+Pillow==9.4.0
+streamlit==1.17.0
+streamlit_option_menu==0.3.2
+~treamlit==1.15.1
