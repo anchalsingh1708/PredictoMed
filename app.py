@@ -39,7 +39,7 @@ if submit and email == actual_email and password == actual_password:
     # If the form is submitted and the email and password are correct,
     # clear the form/container and display a success message
     placeholder.empty()
-    webbrowser.open('https://anchalsingh1708-predictomed-multiple-disease-prediction-b3kktz.streamlit.app/')
+    webbrowser.open('https://predictomed.streamlit.app/')
 elif submit and email != actual_email and password != actual_password:
     st.error("Login failed")
 else:
