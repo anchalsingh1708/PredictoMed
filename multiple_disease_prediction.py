@@ -116,7 +116,7 @@ if (selected == 'Diabetes Prediction'):
     
    
 # Load the diabetes dataset
-    df = pd.read_csv("datasets\diabetes.csv")
+    df = pd.read_csv("https://github.com/anchalsingh1708/PredictoMed/blob/master/datasets/diabetes.csv")
 
 # Create a title and header
     st.header("Exploring Diabetes Dataset")
@@ -190,7 +190,7 @@ if (selected == 'Heart Disease Prediction'):
     
     st.header('Exploring Heart Disease Dataset')
        # Load the heart disease data set
-    df = pd.read_csv("datasets\heart.csv")
+    df = pd.read_csv("https://github.com/anchalsingh1708/PredictoMed/blob/master/datasets/heart.csv")
 
        # Create a bar chart of the number of cases for each type of heart disease
     column = st.selectbox("Select a column", df.columns)
@@ -274,7 +274,7 @@ if (selected == "Parkinsons Prediction"):
     # page title
    
     # Load the Parkinson's dataset
-    df = pd.read_csv("datasets\parkinsons.csv")
+    df = pd.read_csv("https://github.com/anchalsingh1708/PredictoMed/blob/master/datasets/parkinsons.csv")
 
 # Create a title and header
     st.title("Parkinson's Analysis")
