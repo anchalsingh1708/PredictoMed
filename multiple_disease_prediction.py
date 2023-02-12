@@ -176,7 +176,7 @@ if st.button('Diabetes Test Result'):
 			diab_diagnosis = 'The person is diabetic'
 		else:
 			diab_diagnosis = 'The person is not diabetic'
-        st.success(diab_diagnosis)
+	st.success(diab_diagnosis)
     
 # Heart Disease Prediction Page
 if (selected == 'Heart Disease Prediction'):
