@@ -170,17 +170,15 @@ if (selected == 'Diabetes Prediction'):
     
     if st.button('Diabetes Test Result'):
 		if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
-            st.write("Please enter a value for all input fields")
-        else:
-            diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
-            
-            if (diab_prediction[0] == 1):
-            
-                diab_diagnosis = 'The person is diabetic'
-            else:
-                diab_diagnosis = 'The person is not diabetic'
+			st.write("Please enter a value for all input fields")
+                else:
+			diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+			if (diab_prediction[0] == 1):
+				diab_diagnosis = 'The person is diabetic'
+                        else:
+				diab_diagnosis = 'The person is not diabetic'
         
-        st.success(diab_diagnosis)
+               st.success(diab_diagnosis)
     
 # Heart Disease Prediction Page
 if (selected == 'Heart Disease Prediction'):
@@ -263,16 +261,18 @@ if (selected == 'Heart Disease Prediction'):
     
     if st.button('Heart Disease Test Result'):
 		if not age or not sex or not cp or not trestbps or not chol or not fbs or not restecg or not thalach or not exang or not oldpeak or not slope or not ca or not thal:
-            st.write("Please enter a value for all input fields")
-        else:
-            heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])                          
-        
-            if (heart_prediction[0] == 1):
-                heart_diagnosis = 'The person is having heart disease'
-            else:
-                heart_diagnosis = 'The person does not have any heart disease'
+			st.write("Please enter a value for all input fields")
+                else:
+			heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])
+			if (heart_prediction[0] == 1):
+				heart_diagnosis = 'The person is having heart disease'
+                        else:
+				heart_diagnosis = 'The person does not have any heart disease'
                 
-        st.success(heart_diagnosis)
+                
+                st.success(heart_diagnosis)
+        
+            
         
 
 # Parkinson's Prediction Page
@@ -378,15 +378,13 @@ if (selected == "Parkinsons Prediction"):
     # creating a button for Prediction    
     if st.button("Parkinson's Test Result"):
 	if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE :
-            st.write("Please enter a value for all input fields")
+		st.write("Please enter a value for all input fields")
         else:
-            parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]])                          
-            
-            
-            if (parkinsons_prediction[0] == 1):
-              parkinsons_diagnosis = "The person has Parkinson's disease"
+            parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]])
+	    if (parkinsons_prediction[0] == 1):
+			parkinsons_diagnosis = "The person has Parkinson's disease"
             else:
-              parkinsons_diagnosis = "The person does not have Parkinson's disease"
+		parkinsons_diagnosis = "The person does not have Parkinson's disease"
               
         st.success(parkinsons_diagnosis)
     
