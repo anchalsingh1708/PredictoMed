@@ -185,7 +185,7 @@ if (selected == 'Diabetes Prediction'):
 # Heart Disease Prediction Page
 if (selected == 'Heart Disease Prediction'):
     
-    
+    st.header('Exploring Heart Disease Dataset')
     st.markdown("Heart disease refers to a range of conditions that affect the heart and blood vessels.")
     
         # Add images
@@ -284,9 +284,10 @@ if (selected == "Parkinsons Prediction"):
     df = pd.read_csv("parkinsons.csv")
 
 # Create a title and header
-    st.title("Parkinson's Analysis")
+    
     st.header("Exploring Parkinson's Data")
-
+    st.markdown("Parkinson's disease is a neurodegenerative disorder that affects movement and coordination. It is caused by the degeneration and loss of dopamine-producing nerve cells in a specific area of the brain")
+    
 # Show the first 5 rows of the dataset
     st.write(df.head())
 
