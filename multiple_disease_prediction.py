@@ -166,16 +166,16 @@ if (selected == 'Diabetes Prediction'):
     # code for Prediction
 # creating a button for Prediction
     diab_diagnosis = ''
-    if st.button('Diabetes Test Result'):
-	if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
-		st.write("Please enter a value for all input fields")
-	else:
-		diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
-		if (diab_prediction[0] == 1):
-			diab_diagnosis = 'The person is diabetic'
+	if st.button('Diabetes Test Result'):
+		if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
+			st.write("Please enter a value for all input fields")
 		else:
-			diab_diagnosis = 'The person is not diabetic'
-	st.success(diab_diagnosis)
+			diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+			if (diab_prediction[0] == 1):
+				diab_diagnosis = 'The person is diabetic'
+			else:
+				diab_diagnosis = 'The person is not diabetic'
+		st.success(diab_diagnosis)
     
 # Heart Disease Prediction Page
 if (selected == 'Heart Disease Prediction'):
