@@ -167,7 +167,7 @@ if (selected == 'Diabetes Prediction'):
     diab_diagnosis = ''
     
     # creating a button for Prediction
-if st.button('Diabetes Test Result'):
+    if st.button('Diabetes Test Result'):
 	if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
 		st.write("Please enter a value for all input fields")
 	else:
