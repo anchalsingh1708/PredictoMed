@@ -120,8 +120,7 @@ if (selected == 'Diabetes Prediction'):
 
 # Create a title and header
     st.header("Exploring Diabetes Dataset")
-    #img = Image.open("E:\PILLAI COLLEGE\MLPROJECT\diabetes.jpg")
-    #st.image(img, width=400)
+  
     st.write("Diabetes is a chronic condition in which the body is unable to produce or effectively use insulin, a hormone that regulates blood sugar levels. This leads to elevated levels of glucose in the blood, which can cause damage to various organs and tissues over time.")
     
 
