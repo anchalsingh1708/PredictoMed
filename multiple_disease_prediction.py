@@ -167,9 +167,9 @@ if (selected == 'Diabetes Prediction'):
 # creating a button for Prediction
     diab_diagnosis = ''
 
-	if st.button('Diabetes Test Result'):
-		if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
-			st.write("Please enter a value for all input fields")
+if st.button('Diabetes Test Result'):
+	if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
+		st.write("Please enter a value for all input fields")
 	else:
 		diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 		if (diab_prediction[0] == 1):
