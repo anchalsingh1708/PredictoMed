@@ -103,7 +103,7 @@ if (selected == 'Home page'):
     def set_background_image(image_path):
         from PIL import Image
         #st.write("Welcome to PredictoMed that predicts the likelihood of heart disease, diabetes, and Parkinson's disease based on symptoms.")
-        st.markdown("<p style='font-family: Comic Sans MS; font-size: 20px;'>Welcome to PredictoMed that predicts the likelihood of diabetes, and Parkinson's disease.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-family: Comic Sans MS; font-size: 20px;'>Welcome to PredictoMed that predicts the likelihood of Diabetes, and Parkinson's disease.</p>", unsafe_allow_html=True)
         image = Image.open(image_path)
         st.image(image, width=700,use_column_width=True)
     
