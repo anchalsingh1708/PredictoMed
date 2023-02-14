@@ -46,7 +46,7 @@ st.set_page_config(
 
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
-heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
+#heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
@@ -59,9 +59,10 @@ with st.sidebar:
                           
                           ['Home page',
                            'Diabetes Prediction',
-                           'Heart Disease Prediction',
+                           #'Heart Disease Prediction',
                            'Parkinsons Prediction'],
-                          icons=['house','activity','heart','person'],
+                          icons=['house','activity','person'],
+			   #icons=['house','activity','heart','person'],
                           menu_icon="command",
                           default_index=0)
 
@@ -183,7 +184,7 @@ if (selected == 'Diabetes Prediction'):
         st.success(diab_diagnosis)
     
 # Heart Disease Prediction Page
-if (selected == 'Heart Disease Prediction'):
+#if (selected == 'Heart Disease Prediction'):
     
     
     st.markdown("Heart disease refers to a range of conditions that affect the heart and blood vessels.")
