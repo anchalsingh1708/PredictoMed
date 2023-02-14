@@ -263,7 +263,7 @@ if (selected == 'Heart Disease Prediction'):
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])
         if (heart_prediction[0] == 1):
               heart_diagnosis = "The person has heart disease"
-            else:
+        else:
               heart_diagnosis = "The person does not have heart disease"
               
         st.success(heart_diagnosis)
