@@ -210,7 +210,7 @@ if (selected == 'Heart Disease Prediction'):
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        age = st.numeric_input('Age')
+        age = st.number_input('Age')
        
     with col2:
         sex = st.text_input('Sex')
