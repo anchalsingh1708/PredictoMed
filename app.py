@@ -244,7 +244,7 @@ if (selected == 'Calories Burnt Prediction'):
     
     # creating a button for Prediction
     
-    if st.button('Heart Disease Test Result'):
+    if st.button('Calories Burnt Result'):
         calories_prediction = calories_model.predict([[gender,age,height,Duration,Heart_Rate,Body_Temp]])                          
         
         Calories_d=calories_prediction
