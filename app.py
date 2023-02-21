@@ -63,19 +63,6 @@ from PIL import Image
 
 icon = Image.open('hospital.png') 
 
-st.set_page_config(
-	page_title = 'PredictoMed',
-	page_icon = icon,
-	layout = 'centered', #wide
-	initial_sidebar_state = 'auto', #collapsed, expanded
-	menu_items={
-		'Get Help': 'https://streamlit.io',
-		'Report a bug': 'https://github.com/anchalsingh1708',
-		'About':'About your application: **PredictoMed**'
-	}
-	)
-
-
 
 
 
