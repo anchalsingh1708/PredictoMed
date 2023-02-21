@@ -153,9 +153,9 @@ if (selected == 'Diabetes Prediction'):
 
 # Create a selectbox to choose which column to plot
     column = st.selectbox("Select a column", df.columns)
-
+    colors = ['red', 'green', 'blue']
 # Plot a bar chart of the selected column
-    st.bar_chart(df[column],color="red")
+    st.bar_chart(df[column],color=colors)
 
     st.title('Diabetes Prediction')
     # getting the input data from the user
