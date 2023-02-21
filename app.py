@@ -40,7 +40,7 @@ if submit and email == actual_email and password == actual_password:
     # clear the form/container and display a success message
     placeholder.empty()
 
-#import base64
+    #import base64
 import pickle
 import streamlit as st
 #import streamlit.components.v1 as components
