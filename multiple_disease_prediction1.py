@@ -45,7 +45,7 @@ st.set_page_config(
 
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
-#heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
+calories_model = pickle.load(open('calories_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
@@ -58,10 +58,10 @@ with st.sidebar:
                           
                           ['Home page',
                            'Diabetes Prediction',
-                           #'Heart Disease Prediction',
+                           'Calories Burnt Prediction',
                            'Parkinsons Prediction'],
-                          icons=['house','activity','person'],
-			   #icons=['house','activity','heart','person'],
+                          #icons=['house','activity','person'],
+			   icons=['house','activity','heart','person'],
                           menu_icon="command",
                           default_index=0)
 
@@ -183,6 +183,50 @@ if (selected == 'Diabetes Prediction'):
     
 
 
+
+
+# Heart Disease Prediction Page
+if (selected == 'Calories Burnt Prediction'):
+    
+    # page title
+    st.title('Calories Burnt Prediction')
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        gender = st.text_input('Gender')
+        
+    with col2:
+        age = st.text_input('Age')
+        
+    with col3:
+        height = st.text_input('Height')
+        
+    with col1:
+        Duration = st.text_input('Duration')
+        
+    with col2:
+        Heart_Rate = st.text_input('Heart_Rate')
+        
+    with col3:
+        Body_Temp = st.text_input('Body_Temp')
+        
+    
+        
+     
+     
+    # code for Prediction
+    Calories_d = ''
+    
+    # creating a button for Prediction
+    
+    if st.button('Heart Disease Test Result'):
+        calories_prediction = calories_model.predict([[gender,age,height,Duration,Heart_Rate,Body_Temp]])                          
+        
+        Calories_d=calories_prediction
+        
+    st.success(Calories_d)
+
 # Parkinson's Prediction Page
 if (selected == "Parkinsons Prediction"):
     
@@ -279,7 +323,7 @@ if (selected == "Parkinsons Prediction"):
         PPE = st.text_input('PPE')
         
     
-    
+   
         
     # code for Prediction
     parkinsons_diagnosis = ''
