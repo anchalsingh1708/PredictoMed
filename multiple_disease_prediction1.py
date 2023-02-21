@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
-
 This is a temporary script file.
 """
 #import base64
@@ -46,7 +45,7 @@ st.set_page_config(
 
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
-heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
+#heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
@@ -59,9 +58,10 @@ with st.sidebar:
                           
                           ['Home page',
                            'Diabetes Prediction',
-                           'Heart Disease Prediction',
+                           #'Heart Disease Prediction',
                            'Parkinsons Prediction'],
-                          icons=['house','activity','heart','person'],
+                          icons=['house','activity','person'],
+			   #icons=['house','activity','heart','person'],
                           menu_icon="command",
                           default_index=0)
 
@@ -86,7 +86,6 @@ hide_streamlit_style = """
            	top: 2px;
            }
            
-
             </style>
             
             """
@@ -102,7 +101,7 @@ if (selected == 'Home page'):
     def set_background_image(image_path):
         from PIL import Image
         #st.write("Welcome to PredictoMed that predicts the likelihood of heart disease, diabetes, and Parkinson's disease based on symptoms.")
-        st.markdown("<p style='font-family: Comic Sans MS; font-size: 20px;'>Welcome to PredictoMed that predicts the likelihood of heart disease, diabetes, and Parkinson's disease.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-family: Comic Sans MS; font-size: 20px;'>Welcome to PredictoMed that predicts the likelihood of Diabetes, and Parkinson's disease.</p>", unsafe_allow_html=True)
         image = Image.open(image_path)
         st.image(image, width=700,use_column_width=True)
     
@@ -120,7 +119,8 @@ if (selected == 'Diabetes Prediction'):
 
 # Create a title and header
     st.header("Exploring Diabetes Dataset")
-  
+    #img = Image.open("E:\PILLAI COLLEGE\MLPROJECT\diabetes.jpg")
+    #st.image(img, width=400)
     st.write("Diabetes is a chronic condition in which the body is unable to produce or effectively use insulin, a hormone that regulates blood sugar levels. This leads to elevated levels of glucose in the blood, which can cause damage to various organs and tissues over time.")
     
 
@@ -181,95 +181,7 @@ if (selected == 'Diabetes Prediction'):
         
         st.success(diab_diagnosis)
     
-# Heart Disease Prediction Page
-if (selected == 'Heart Disease Prediction'):
-    
-    st.header('Exploring Heart Disease Dataset')
-    st.markdown("Heart disease refers to a range of conditions that affect the heart and blood vessels.")
-    
-        # Add images
-    #img = Image.open("E:\PILLAI COLLEGE\MLPROJECT\heart.png")
-    #st.image(img, width=300)
-    
-    st.header('Exploring Heart Disease Dataset')
-       # Load the heart disease data set
-    df = pd.read_csv("heart.csv")
 
-       # Create a bar chart of the number of cases for each type of heart disease
-    column = st.selectbox("Select a column", df.columns)
-
- # Plot a bar chart of the selected column
-    st.bar_chart(df[column])
-    st.write('Chest Pain Types- angina (0), atypical angina (1), non-anginal pain (2), or asymptomatic (3)')
-    
-   
-# heartimage = Image.open('E:\PILLAI COLLEGE\MLPROJECT\heart.png')
-
-    #st.image(heartimage, caption='heart')
-    st.title('Heart Disease Prediction')
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        age = st.text_input('Age')
-       
-    with col2:
-        sex = st.text_input('Sex')
-        
-    with col3:
-        cp=st.selectbox('Chest Pain types',(0,1,2,3))
-        #st.write(cp)
-        
-        
-        #cp = st.text_input('Chest Pain types')
-        
-    with col1:
-        trestbps = st.text_input('Resting Blood Pressure')
-        
-    with col2:
-        chol = st.text_input('Serum Cholestoral in mg/dl')
-        
-    with col3:
-        fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl')
-        
-    with col1:
-        restecg = st.text_input('Resting Electrocardiographic results')
-        
-    with col2:
-        thalach = st.text_input('Maximum Heart Rate achieved')
-        
-    with col3:
-        exang = st.text_input('Exercise Induced Angina')
-        
-    with col1:
-        oldpeak = st.text_input('ST depression induced by exercise')
-        
-    with col2:
-        slope = st.text_input('Slope of the peak exercise ST segment')
-        
-    with col3:
-        ca = st.text_input('Major vessels colored by flourosopy')
-        
-    with col1:
-        thal = st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
-        
-        
-     
-     
-    # code for Prediction
-    heart_diagnosis = ''
-    
-    # creating a button for Prediction
-    if st.button("Heart Disease Test Result"):
-        if not age or not sex or not cp or not trestbps or not chol or not fbs or not restecg or not thalach or not exang or not oldpeak or not slope or not ca or not thal:
-            st.write("Please enter a value for all input fields")
-	else:
-	    heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])
-            if (heart_prediction[0] == 1):
-              heart_diagnosis = "The person has heart disease"
-            else:
-              heart_diagnosis = "The person does not have heart disease"
-              
-        st.success(heart_diagnosis)
 
 # Parkinson's Prediction Page
 if (selected == "Parkinsons Prediction"):
@@ -280,10 +192,9 @@ if (selected == "Parkinsons Prediction"):
     df = pd.read_csv("parkinsons.csv")
 
 # Create a title and header
-    
+    st.title("Parkinson's Analysis")
     st.header("Exploring Parkinson's Data")
-    st.markdown("Parkinson's disease is a neurodegenerative disorder that affects movement and coordination. It is caused by the degeneration and loss of dopamine-producing nerve cells in a specific area of the brain")
-    
+
 # Show the first 5 rows of the dataset
     st.write(df.head())
 
@@ -387,27 +298,3 @@ if (selected == "Parkinsons Prediction"):
               parkinsons_diagnosis = "The person does not have Parkinson's disease"
               
         st.success(parkinsons_diagnosis)
-            
-        
-            
-        
-    
-    
-    
-
-    
-    
-    
-
-
-
-
-
-
-        
-    
-        
-
-
-
-    
